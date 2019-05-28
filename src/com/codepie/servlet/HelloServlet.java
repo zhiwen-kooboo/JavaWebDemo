@@ -14,7 +14,7 @@ public class HelloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// super.doGet(req, resp);
 		
-		System.out.println("doGet---233");
+		System.out.println("doGet---2333");
 	}
 	
 	@Override
