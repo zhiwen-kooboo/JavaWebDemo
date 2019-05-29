@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 看到18集，生命周期
+ * doGet doPost
  */
 public class HelloServlet extends HttpServlet {
 	@Override
@@ -21,6 +21,11 @@ public class HelloServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		super.doPost(req, resp);
 		
-		System.out.println("doPost---!!");
+		System.out.println("doPost----!!");
+	}
+	
+	@Override
+	public void init() throws ServletException {
+		System.out.println("init在 01");
 	}
 }

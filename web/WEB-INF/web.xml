@@ -4,15 +4,46 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <context-param>
+        <param-name>contextKey</param-name>
+        <param-value>context value</param-value>
+    </context-param>
     <!--注册一个servlet-->
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>com.codepie.servlet.HelloServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <!--注册servlet的映射-->
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/HelloServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--HelloServlet2-->
+    <servlet>
+        <servlet-name>HelloServlet2</servlet-name>
+        <servlet-class>com.codepie.servlet.HelloServlet2</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet2</servlet-name>
+        <url-pattern>/HelloServlet2</url-pattern>
+    </servlet-mapping>
+
+    <!--HelloServletConfig-->
+    <servlet>
+        <servlet-name>HelloServletConfig</servlet-name>
+        <servlet-class>com.codepie.servlet.HelloServletConfig</servlet-class>
+        <init-param>
+            <param-name>testParam</param-name>
+            <param-value>233</param-value>
+        </init-param>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServletConfig</servlet-name>
+        <url-pattern>/HelloServletConfig</url-pattern>
     </servlet-mapping>
 </web-app>
