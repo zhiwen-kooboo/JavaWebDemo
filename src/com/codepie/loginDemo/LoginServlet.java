@@ -18,18 +18,21 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("进入LoginServlet的doGet！");
+		doPost(request, response);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		var map = request.getParameterMap();
-		for (var key : map.keySet()) {
-			System.out.println(String.format("key=%s&value=%s", key, map.get(key)[0]));
-		}
 		
 		PrintWriter pw = response.getWriter();
+		var obj = getServletContext().getAttribute("count");
+		var totalCount = obj == null ? 0 : (int) obj;
 		
 		if ("admin".equalsIgnoreCase(request.getParameter("username"))) {
+			getServletContext().setAttribute("count", ++totalCount);
+			
+			System.out.println("登陆成功的次数是" + totalCount);
+			
 			response.setStatus(302);
 			response.setHeader("location", "login_success.html");
 		} else {
