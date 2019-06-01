@@ -24,6 +24,7 @@ public class DownloadServlet extends HttpServlet {
 		// response.setHeader("Content-Disposition", "attachment; filename=" + fileName);
 		OutputStream os = response.getOutputStream();
 		
+		
 		// 输出
 		int len = 0;
 		byte[] buffer = new byte[1024];
