@@ -1,1 +1,1 @@
-# ServletDemo
+# JavaWebDemo
