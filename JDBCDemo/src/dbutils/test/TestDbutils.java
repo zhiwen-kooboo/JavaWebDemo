@@ -1,5 +1,6 @@
 package dbutils.test;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.junit.Test;
 
@@ -14,6 +15,7 @@ public class TestDbutils {
 	@Test
 	public void testInsert() throws SQLException {
 		// dbUtils只是帮我们简化了CRUD，但是连接的创建还需要我们自己来
+		
 		
 		QueryRunner queryRunner = new QueryRunner();
 		
